@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+.ps .ps__scrollbar-y-rail {
+  left: 3px;
+  right: auto;
+}
+
+html body {
+  overflow: scroll !important;
+}
+
+.form-control {
+  min-height: 58px !important;
+}
+
+.card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 2.5rem !important;
+
+}
+
+.m-t-67 {
+  margin-top: 67px !important;
+}
+
+.login-box.card{
+  width: 35% !important;
+}
+
+.btn-info {
+  background: #7ac64d !important;
+  border: 1px solid #7ac64d !important;
+}
+
+.text-info {
+  color: #7ac64d !important;
+}
+
+
+body {
+  font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif !important;
+  font-size: 18px !important;
+}
+
+.checkbox input[type=checkbox] {
+  position: absolute;
+  margin-top: 8px !important;
+  margin-left: 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif !important; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif !important; }

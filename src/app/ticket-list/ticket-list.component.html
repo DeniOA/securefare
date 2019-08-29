@@ -1,0 +1,148 @@
+<app-header2></app-header2>
+<div *ngIf="isLoading">
+  <div id="preloader">
+    <div class="row loader">
+        <div class="loader-icon"></div>
+    </div>
+  </div>
+</div>
+<div  *ngIf="!isLoading" class="">
+
+<!-- Start Top Title -->
+<section class="top-title car-top-title">
+</section>
+<!-- End Top Title -->
+
+
+
+
+<!-- Start Trains List Area -->
+<section class="trains-list-area bg-default">
+    <div class="container train-list">
+        <div class="row m-60">
+            <div class="content mgt-60">
+                <div class="col-lg-3 col-md-4 p-15">
+                    <div class="sidebar sidebar-right">
+                        <div class="widget-sidebar widget-banner">
+                            <a href="#" title="">
+                                <img src="../../assets/images/secureid.png" alt="">
+                            </a>
+                        </div>
+                        <div class="widget-sidebar widget-times">
+                            <h6>CHOOSE <span>TIMES</span></h6>
+                            <div class="widget-content">
+                                <div class="select-time">
+                                    <p>Depart Time</p>
+                                    <div id="slider-range" class="slider-range"></div>
+                                    <span id="time" class="time"></span>
+                                </div>
+                                <div class="select-time">
+                                    <p>Return Time</p>
+                                    <div id="slider-range-1" class="slider-range"></div>
+                                    <span id="time-1" class="time"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-sidebar widget-departure-station">
+                            <h6>DEPARTURE <span>STATION</span></h6>
+                            <div class="widget-content">
+                                <form *ngFor="let station of stations" action="#" method="get" accept-charset="utf-8">
+                                    <div class="radio">
+                                        <input type="radio" id="londa" name="departure-station">
+                                        <label>{{ station.name }}</label>
+                                        <!-- <span>$2,120</span> -->
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="tickets.length > 0; else no_tickets" class="col-lg-9 col-md-8 p-15">
+                    <div class="trains-list">
+                        <div class="title-trains bg-default">
+                          <!-- <h6>{{ search.source_name }} - {{ search.destination_name }}</h6> -->
+                          <!-- <div class="number-list">1 - 20 out of 45 <a href="#" class="prev  icon-left-open" title=""></a><a href="#" class="next  icon-right-open" title=""></a></div> -->
+                          <button [disabled]="schedule.length == 0" class="uk-align-right uk-button uk-button-default"
+                          (click)= "onBuy()">Buy Now</button>
+                        </div>
+                        <div class="trains-content bg-white">
+                            <div class="inner-box-tab">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Train</th>
+                                            <th>Departure</th>
+                                            <th>Station</th>
+                                            <th>Type</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let ticket of tickets; let i = index">
+                                            <td>
+                                               <span class="image"> <img src="images/icon/train.png" alt=""></span>
+                                                <div class="no-train">
+                                                    <span>{{ ticket.train_name }}</span>
+                                                    (Train No: 9307)
+                                                    {{ ticket.ages }}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="depart-item">
+                                                    <span class="time">{{ ticket.departure }}</span>
+                                                </div>
+                                                <div class="depart-item">
+                                                    <span class="time">{{ ticket.arrival }}</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="station-item">
+                                                    {{ ticket.source_terminal }}
+                                                </div>
+                                                <div class="station-item">
+                                                    {{ ticket.destination_terminal }}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="duration-option">
+                                                    <div class="item">
+                                                        {{ ticket.ticket_class_type }}
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                              <input class="quantity" min="1" [(value)]="quantity" (change)="onAdd(ticket); onPick(ticket)"
+                                              type="number"
+                                              [(ngModel)]="ticket.quantity" >
+                                            </td>
+                                            <td>
+                                              {{ ticket.amount | currency:'NGN ' }}
+                                          </td>
+                                          <td>
+                                            <input class="total" min="1" type="number" [(ngModel)]="ticket.quantity * ticket.amount" disabled>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ng-template #no_tickets>
+                  <div class="col-lg-9 col-md-8 p-15 mgt">
+                    <img src="../../assets/images/saucer.png" width="50%" height="50%" class="mt-4 d-block mx-auto">
+                    <h3 class="text-center">Ooops, We didn't find any train here</h3>
+                  </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Trains List Area -->
+</div>
+
+<app-footer></app-footer>

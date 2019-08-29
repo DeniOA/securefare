@@ -1,0 +1,5 @@
+input[type='radio'] { transform: scale(2) !important;  }
+
+body {
+  font-size: 18px !important;  
+} 

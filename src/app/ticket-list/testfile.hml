@@ -1,0 +1,183 @@
+<div *ngIf="isLoading">
+  Loading...
+</div>
+<div  *ngIf="!isLoading" class="">
+
+<!-- Start Trains List Area -->
+<section>
+  <div class="">
+      <div class="row">
+          <div class="content">
+              <div class="col-lg-3 col-md-4">
+                  <div class="sidebar sidebar-right">
+                      <div class="widget-sidebar widget-banner">
+                          <a href="#" title="">
+                              <img src="../../assets/images/banner_01.jpg" alt="">
+                          </a>
+                      </div>
+                      <div class="widget-sidebar widget-times">
+                          <h6>CHOOSE <span>TIMES</span></h6>
+                          <div class="widget-content">
+                              <div class="select-time">
+                                  <p>Depart Time</p>
+                                  <div id="slider-range" class="slider-range"></div>
+                                  <span id="time" class="time"></span>
+                              </div>
+                              <div class="select-time">
+                                  <p>Return Time</p>
+                                  <div id="slider-range-1" class="slider-range"></div>
+                                  <span id="time-1" class="time"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="widget-sidebar widget-departure-station">
+                          <h6>DEPARTURE <span>STATION</span></h6>
+                          <div class="widget-content">
+                              <form action="#" method="get" accept-charset="utf-8">
+                                  <div class="radio">
+                                      <input type="radio" id="londa" name="departure-station">
+                                      <label for="londa">Londa Junction</label>
+                                      <span>$2,120</span>
+                                  </div>
+                                  <div class="radio">
+                                      <input type="radio" id="daund" name="departure-station">
+                                      <label for="daund">Daund Junction</label>
+                                      <span>$1,027</span>
+
+                                  </div>
+                                  <div class="radio">
+                                      <input type="radio" id="bekok" name="departure-station">
+                                      <label for="bekok">Bekok Train</label>
+                                      <span>$863</span>
+                                  </div>
+                                   <div class="radio">
+                                      <input type="radio" id="kempas" name="departure-station">
+                                      <label for="kempas">Kempas Baru</label>
+                                      <span>$2,120</span>
+                                  </div>
+                                  <div class="radio">
+                                      <input type="radio" id="south" name="departure-station">
+                                      <label for="south">Beijing South</label>
+                                      <span>$1,027</span>
+                                  </div>
+                                  <div class="radio">
+                                      <input type="radio" id="newbury" name="departure-station">
+                                      <label for="newbury">Newbury</label>
+                                      <span>$863</span>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="widget-sidebar widget-fare">
+                          <h6>FARE <span>TYPE</span></h6>
+                          <div class="widget-content">
+                              <form action="#" method="get" accept-charset="utf-8">
+                                  <div class="radio">
+                                      <input type="radio" id="advance" name="fare">
+                                      <label for="advance">Advance</label>
+                                      <span>$863</span>
+                                  </div>
+                                  <div class="radio">
+                                      <input type="radio" id="offpeak" name="fare">
+                                      <label for="offpeak">Offpeak</label>
+                                      <span>$2,120</span>
+                                  </div>
+                                  <div class="radio">
+                                      <input type="radio" id="anytime" name="fare">
+                                      <label for="anytime">Anytime</label>
+                                      <span>$1,027</span>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-9 col-md-8">
+                  <div class="trains-list">
+                      <div class="title-trains bg-default">
+                          <h6>Ipoh - Kuala Lumpur</h6>
+                          <div class="number-list">1 - 20 out of 45 <a href="#" class="prev  icon-left-open" title=""></a><a href="#" class="next  icon-right-open" title=""></a></div>
+                      </div>
+                      <div class="trains-content bg-white">
+                          <div class="inner-box-tab">
+                              <table>
+                                  <thead>
+                                      <tr>
+                                          <th>Train</th>
+                                          <th>Departure</th>
+                                          <th>Station</th>
+                                          <th>Duration</th>
+                                          <th>Price</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr *ngFor="let ticket of tickets">
+                                          <td>
+                                             <span class="image"> <img src="../../assets/images/train.png" alt=""></span>
+                                              <div class="no-train">
+                                                  <span>{{ ticket.train_name }}</span>
+                                                  (Train No: 9307)
+                                              </div>
+                                          </td>
+                                          <td>
+                                              <div class="depart-item">
+                                                  <span class="time">{{ ticket.departure }}</span> AM
+                                              </div>
+                                              <div class="depart-item">
+                                                  <span class="time">{{ ticket.arrival }}</span> AM
+                                              </div>
+                                          </td>
+                                          <td>
+                                              <div class="station-item">
+                                                {{ ticket.destination_terminal }} station
+                                              </div>
+                                              <div class="station-item">
+                                                {{ ticket.source_terminal }} station
+                                              </div>
+                                          </td>
+                                          <td>
+                                              <div class="duration-time">
+                                                  4h26m
+                                              </div>
+                                              <div class="duration-option">
+                                                  <div class="item">
+                                                      {{ ticket.ticket_class_type }}
+                                                  </div>
+                                                  <!-- <div class="item">
+                                                      1st Cls.
+                                                  </div>
+                                                  <div class="item">
+                                                      Business Cls.
+                                                  </div> -->
+                                              </div>
+                                          </td>
+                                          <td>
+                                              <div class="price-item">
+                                                  <span class="price">{{ ticket.amount }}</span> <span class="unit">NGN</span>
+                                                  <span class="more icon-dot-3"></span>
+                                              </div>
+                                              <!-- <div class="price-item">
+                                                  <span class="price">453</span> <span class="unit">USD</span>
+                                                 <span class="more icon-dot-3"></span>
+                                              </div>
+                                              <div class="price-item">
+                                                  <span class="price">754</span> <span class="unit">USD</span>
+                                                  <span class="more icon-dot-3"></span>
+                                              </div> -->
+                                          </td>
+                                          <td>
+                                            <button class="btn btn-success" (click)=onAdd(ticket.id)>Add to Cart</button>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Trains List Area -->
+</div>

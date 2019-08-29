@@ -1,0 +1,99 @@
+<app-header2></app-header2>
+
+<section class="top-title car-top-title">
+  </section>
+
+  <div class="container">
+    <div class="row">
+        <div class="uk-placeholder col-md-3 mx-2">
+            <div>
+              <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+                <h3 class="uk-card-title">Summary</h3>
+              </div>
+              <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+                <div class="row">
+                  <div class="col-6">
+                    <p>{{ ticket.train_name }}
+                    </p>
+                  </div>
+                  <div class="col-6">
+                      <p>{{ ticket.class_type }}
+                      <span>{{ ticket.amount }}</span>
+                      </p>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-6"><p>{{ ticket.departure }}</p></div>
+                  <div class="col-6"><p>{{ ticket.arrival }}</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-6"><p>{{ ticket.source_terminal }}</p></div>
+                  <div class="col-6"><p>{{ ticket.destination_terminal }}</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-6"><p>Adults</p></div>
+                  <div class="col-6"><p>{{ adults.length }}</p></div>
+                </div>
+                <div class="row">
+                  <div class="col-6"><p>Children</p></div>
+                  <div class="col-6"><p>{{ children.length }}</p></div>
+                </div>
+                <hr>
+              </div>
+              <!-- <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+                Fro
+              </div>
+              <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+                Baggage
+              </div> -->
+              <div class="uk-card-footer uk-background-secondary uk-text-success">
+                <p class="uk-text-success">Total <span class="uk-align-right">{{ total }}</span> </p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="uk-placeholder col-md-8 mx-2">
+              <mat-accordion multi="true" *ngIf="schedules.length > 0">
+                  <mat-expansion-panel  [expanded]="step === i" (opened)="setStep(i)" hideToggle *ngFor="let schedule of schedules index as i">
+                    <mat-expansion-panel-header>
+                      <mat-icon>remove_circle_outline</mat-icon>
+                      <mat-panel-description>
+                          Passenger {{ i + 1 }}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <form class="reservationForm" [formGroup]="reservationForm">
+                      <div class="uk-margin d-inline-block mx-2">
+                      <input formControlName="fullname" class="uk-input uk-form-width-medium" type="text" placeholder="First Name">
+                      </div>
+                      <!-- <div class="uk-margin d-inline-block mx-2">
+                      <input formControlName="lastname" class="uk-input uk-form-width-medium" type="text" placeholder="Last Name">
+                      </div> -->
+                      <div class="uk-margin d-inline-block mx-2">
+                      <input formControlName="phone_number" class="uk-input uk-form-width-medium" type="tel" placeholder="Primary Contact">
+                      </div>
+                      <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                          <label><input class="uk-radio" type="radio" name="gender" checked> Male </label>
+                          <label><input class="uk-radio" type="radio" name="gender"> Female </label>
+                      </div>
+                      <div class="uk-margin mx-2">
+                      <input formControlName="next_of_kin_name" class="uk-input uk-form-width-large" type="email" placeholder="Next of Kin Fullname">
+                      </div>
+                      <div class="uk-margin d-inline-block mx-2">
+                        <input formControlName="next_of_kin_phone" class="uk-input uk-form-width-medium" type="tel" placeholder="Primary Contact">
+                      </div>
+                      <mat-action-row>
+                        <button class="mt-2 uk-align-right uk-button uk-button-secondary" (click)="nextStep(i); onAddPassenger(reservationForm.value)"> Next Passenger </button>
+                      </mat-action-row>
+                    </form>
+                  </mat-expansion-panel>
+                </mat-accordion>
+
+            <button [disabled]="ageGroup.length==0" (click)="onMove()"class="btn-block mt-4 increase-font uk-button uk-button-primary uk-button-large"
+            >Make Reservations</button>
+            </div>
+    </div>
+  </div>
+
+
+  <app-footer></app-footer>

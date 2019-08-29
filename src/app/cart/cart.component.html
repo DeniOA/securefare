@@ -1,0 +1,47 @@
+
+
+<div id="collapseExample" [ngbCollapse] = 'false'>
+  <div class="card">
+    <div class="card-body">
+      <h1 style="color: chocolate;">Items in your cart: <span style="margin-left: 35%; color: greenyellow">Total Value is: {{allTotal}} </span>
+        <button class="btn btn-outline-success"  routerLink="/reservation-details" routerLinkActive="active">CheckOut</button>
+        <!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)">Modal vertically centered</button>
+        -->
+        <button class='btn btn-outline-secondary'
+        (click)='onBack()'
+        style='width:80px'>
+  <i class='fa fa-chevron-left'></i> Home
+</button>
+      </h1>
+      <table class="table table-bordered table-responsive table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th class="row-src">Source and Destination</th>
+            <th class="row-cat">Category</th>
+            <th class="row-amt">Price</th>
+            <th class="row-qty">Quantity</th>
+            <th class="row-add">Add/Remove</th>
+            <th class="row-tot">Total For Ticket</th>
+          </tr>
+        </thead>
+          <tr *ngFor = "let prod of productAddedTocart; let q = index">
+            <td class="center">{{prod.source_terminal}}-- {{prod.destination_terminal}}</td>
+            <td class="center">{{prod.ages}}</td>
+            <td> {{prod.amount}}</td>
+            <td> {{prod.Quantity}}</td>
+            <td class="qty">
+              <div class="form-inline">
+                <button type="button" (click)="onAddQuantity(prod)" class="btn btn-success" style="margin-left: 1.5rem; text-align: center;"><strong >+</strong></button>
+                <input type="text" [ngModel] = "prod.Quantity" (ngModelChange) = "prod.Quantity=$event" class="form-control form-inline" id="count">
+                <button type="button" (click)="onRemoveQuantity(prod)" class="btn btn-danger" > <strong>-</strong> </button>
+              </div>
+            </td>
+            <td>
+              {{prod.amount *prod.Quantity}} </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+

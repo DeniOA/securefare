@@ -1,0 +1,39 @@
+.form-control {
+  min-height: 58px !important;
+}
+
+.card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 2.5rem !important;
+
+}
+
+.m-t-67 {
+  margin-top: 67px !important;
+}
+
+.login-box.card{
+  width: 35% !important;
+}
+
+.btn-info {
+  background: #7ac64d;
+  border: 1px solid #7ac64d !important;
+}
+
+.text-info {
+  color: #7ac64d !important;
+}
+
+
+.btn.btn-block {
+  background: #7ac64d !important;
+  font-size: 16px !important;
+}
+
+body {
+  font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif !important;
+  font-size: 18px !important;
+}

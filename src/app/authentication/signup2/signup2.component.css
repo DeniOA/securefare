@@ -1,0 +1,34 @@
+.btn-log{
+  background: #106D2A !important;
+  border-radius: 2px !important;
+}
+
+#checkbox-signup {
+  margin-left: auto !important;
+}
+
+body {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+
+.error input {
+  background-color: #E05C65;
+  padding-left: 10px;
+}
+
+.error::-webkit-input-placeholder {
+  color: #999;
+}
+
+.error :-moz-placeholder {
+  color: #999;
+}
+
+.error ::-moz-placeholder {
+  color: #999;
+}
+
+.error :-ms-input-placeholder {
+  color: #999;
+}

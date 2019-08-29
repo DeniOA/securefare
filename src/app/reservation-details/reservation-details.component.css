@@ -1,0 +1,140 @@
+#container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+
+}
+
+body{
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+}
+
+a.nav-link:hover {
+  background: none !important;
+  cursor: pointer !important;
+  color: #7AC64D;
+  text-decoration: none !important;
+}
+
+.mt-10 {
+  margin-top: 10rem !important;
+}
+
+.footer-area .container {
+  margin-left: auto !important;
+  width: 100% !important;
+  padding-right: 15px !important;
+  padding-left: 15px !;
+  margin-right: auto !important;
+  }
+
+  .bordered {
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+  }
+
+  .border-l {
+    border-left: 1px solid #cccccc;
+  }
+
+  .card-body {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .uk-card-secondary .uk-background-secondary {
+    background-color: #28292e
+  }
+
+  /* cccccc */
+  /* 28292e */
+
+  .train-icon {
+    font-size: 5rem !important;
+    color: #ffffff !important;
+    background-color: #cccccc !important;
+  }
+
+  .btn-outline-success {
+    color:#28a745 !important;
+    border-color: #28a745 !important
+  }
+
+  /* .footer-area {
+    margin-top: 51rem !important;
+  } */
+
+  @media (min-width: 768px){
+    .footer-area .container  {
+      max-width: 720px !important;
+    }
+  }
+
+  @media (min-width: 576px){
+    .footer-area .container  {
+      max-width: 540px !important;
+    }
+  }
+
+  .footer-area.row {
+       display: flex !important;
+       flex-wrap: wrap !important;
+       margin-right: -15px !important;
+       margin-left: -15px !important;
+    }
+
+    .footer-area  .col-lg-4 {
+
+      min-height: 1px !important;
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+      width: 100% !important;
+      position: relative !important;
+
+    }
+
+
+   @media(min-width:768px){
+     .footer-area .col-md-6  {
+       max-width: 50% !important;
+       flex: 0 0 50% !important;
+     }
+   }
+
+   .p-b{
+     padding-top: 1.5rem;
+     padding-bottom: 1.5rem;
+   }
+
+ .reserve{
+  position: inherit !important;
+    width: 100% !important;
+    margin-left: 15px !important;
+    margin-top: 18rem !important;
+    margin-bottom: 6rem;
+
+ }
+
+ .btn-reserve{
+  border-radius: inherit !important;
+  text-align: center !important;
+  display: flex;
+  background: #7AC64D;
+  margin: 0 auto;
+  color: white;
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  margin-bottom: 5rem;
+
+}
+
+.btn-reserve:hover{
+  background: rgb(13, 24, 8);
+}

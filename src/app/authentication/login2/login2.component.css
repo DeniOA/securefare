@@ -1,0 +1,42 @@
+.form-control {
+  min-height: 58px !important;
+}
+
+.card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 2.5rem !important;
+ 
+}
+
+.m-t-67 {
+  margin-top: 67px !important;
+}
+
+.login-box.card{
+  width: 35% !important;
+}
+
+.btn-info {
+  background: #7ac64d;
+  border: 1px solid #7ac64d !important;
+}
+
+.text-info {
+  color: #7ac64d !important;
+}
+
+#checkbox-signup {
+  margin-left: auto !important;
+}
+
+.btn-log{
+  background: #106D2A !important;
+}
+
+em {
+  float: right;
+  color: #E05C65;
+  padding-left: 10px;
+}

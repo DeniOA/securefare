@@ -1,0 +1,182 @@
+<!--================ Header Menu Area start =================-->
+<!-- <header class="header_area">
+  <div class="main_menu">
+    <nav class="navbar navbar-expand-lg navbar-light mb-5">
+      <div class="container box_1620">
+        <a class="navbar-brand logo_h" href="/"><img class="logo"  src="assets/images/img/Securefare.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+          <ul class="nav navbar-nav menu_nav justify-content-end">
+            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" >Pricing</a></li>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login" routerLinkActive="active" >Login</a></li>
+          </ul>
+
+          <div class="nav-right text-center text-lg-right py-4 py-lg-0">
+            <a class="button btn-dark" href="#b">Book a trip</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header> -->
+<!--================Header Menu Area =================-->
+
+<app-header2></app-header2>
+
+<div id="content" class="container mt-4 mt-10">
+  <div class="row">
+      <div class="col-md-3 mx-2">
+          <div>
+            <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              <h3 class="uk-card-title">Summary</h3>
+            </div>
+            <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              <div class="row">
+                <div class="col-6">
+                  <p>{{ ticket.train_name }}
+                  <span>{{ ticket.ages }}</span>
+                  </p>
+                </div>
+                <div class="col-6">
+                    <p>{{ ticket.class_type }}
+                    <span>{{ ticket.amount }}</span>
+                    </p>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-6">{{ ticket.departure }}</div>
+                <div class="col-6">{{ ticket.arrival }}</div>
+              </div>
+              <div class="row">
+                <div class="col-6">{{ ticket.source_terminal }}</div>
+                <div class="col-6">{{ ticket.destination_terminal }}</div>
+              </div>
+              <div class="row">
+                <div class="col-6"><p>Adults</p></div>
+                <div class="col-6"><p>{{ adults.length }}</p></div>
+              </div>
+              <div class="row">
+                <div class="col-6"><p>Children</p></div>
+                <div class="col-6"><p>{{ children.length }}</p></div>
+               </div>
+
+              <hr>
+            </div>
+            <!-- <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              Fro
+            </div>
+            <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              Baggage
+            </div> -->
+            <div class="uk-card-footer uk-background-secondary uk-text-success">
+              <p class="uk-text-success">Total <span class="uk-align-right">{{ total }}</span> </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-8 mx-2">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    Train Info
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3 pt-4">
+                        <qrcode [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'" style="text-align: center;"></qrcode>
+                        <ul class="uk-list">
+                          <li>{{ reservation.res_no }}</li>
+                        </ul>
+                      </div>
+                      <div class="col-6 bordered py-4">
+                        <p>{{ ticket.train_name }}</p>
+                       <div class="row">
+                        <div class="col-4">
+                          <p>{{ reservation.reservation_date }}</p>
+                          <p>{{ ticket.source_terminal }}</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center align-items-center px-auto py-auto">
+                          <i class="material-icons">arrow_right_alt</i>
+                        </div>
+                        <div class="col-4">
+                          <p>{{ reservation.return_date }}</p>
+                          <p>{{ ticket.destination_terminal }}</p>
+                        </div>
+                       </div>
+                      </div>
+                      <div class="col-3 py-4">
+                        Total: {{ reservation.total }}
+                        <!-- <button class="btn btn-outline-success">Change</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    Passengers Info
+                  </div>
+                  <div *ngFor="let passenger of passengers; index as i" class="card-body">
+                    <div class="row">
+                      <div class="col-9">
+                        <!-- <img class="uk-border-circle" width="40" height="40" src="../../assets/images/train.png"> -->
+                        <table class="uk-table uk-table-justify">
+                            <caption>Passenger {{ i + 1 }}</caption>
+                            <thead class="">
+                                <tr>
+                                    <th class="uk-width-small"></th>
+                                    <th class=""></th>
+                                </tr>
+                            </thead>
+                          <tbody>
+                              <tr>
+                                  <td>Name:</td>
+                                  <td>{{passenger.fullname}}</td>
+                              </tr>
+                          </tbody>
+                          <tbody>
+                              <tr>
+                                  <td>Gender:</td>
+                                  <td>{{ passenger.gender }}</td>
+                              </tr>
+                              <tr>
+                                  <td>Next Of Kin:</td>
+                                  <td>{{ passenger.next_of_kin }}</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      </div>
+                      <div class="col-3 border-l py-4">
+                        <button class="btn btn-outline-success">Change</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+  </div>
+</div>
+
+<button (click)="onDownloadPDF()">Download Receipt</button>
+
+
+
+
+
+       <!-- ================ start footer Area ================= -->
+<app-footer></app-footer>

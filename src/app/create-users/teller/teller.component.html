@@ -1,0 +1,61 @@
+<div class="align-items-center animated fadeIn" style="left: 50%; top: 50%;">
+  <div class="container create-admin-container" >
+    <div class="row">
+      <div class="col-md-6 default-container">
+        <div class="card prjct-soft-corners">
+          <div class="card-body p-4">
+            <h1>Create a New Teller</h1>
+            <p class="text-muted">Create a new user</p>
+            
+            <form  novalidate >                
+              <div class="row">
+                <div class="input-group mb-3 col-xs-12 col-md-12 ">
+                  <input #usernameInput="ngModel" type="text" class="form-control prjct-soft-corners" [ngClass]="{'prjct-input-danger':(usernameInput.invalid && usernameInput.touched)}"
+                    ngModel name="username" placeholder="Username*" required>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <p class="prjct-input-danger-help-text" *ngIf="usernameInput.invalid && usernameInput.touched">A username is required</p>
+                </div>
+                <div class="input-group mb-3 col-xs-12 col-md-12">
+                  <input #passwordInput="ngModel" type="password" class="form-control prjct-soft-corners" pattern="(?=.*\d)(?=.*[a-z]).{6,}"
+                    [ngClass]="{'prjct-input-danger':(passwordInput.invalid && passwordInput.touched)}" ngModel name="password"
+                    placeholder="Password*" required>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <p class="prjct-input-danger-help-text" *ngIf="(passwordInput.invalid && passwordInput.touched)">Must be alphanumeric, and at least 6 or more characters</p>
+                </div>
+                <div class="input-group mb-3 col-xs-12 col-md-12">
+                  <input #emailInput="ngModel" type="text" class="form-control prjct-soft-corners" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$"
+                    [ngClass]="{'prjct-input-danger':(emailInput.invalid && emailInput.touched)}" ngModel name="email" placeholder="Email*"
+                    email required>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <p class="prjct-input-danger-help-text" *ngIf="emailInput.invalid && emailInput.touched">A valid Email is required</p>
+                </div>
+                <div class="input-group mb-3 col-xs-12 col-md-12">
+                  <input #firstnameInput="ngModel" type="text" class="form-control prjct-soft-corners" [ngClass]="{'prjct-input-danger':(firstnameInput.invalid && firstnameInput.touched)}"
+                    ngModel name="firstname" placeholder="First Name*" required>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <p class="prjct-input-danger-help-text" *ngIf="firstnameInput.invalid && firstnameInput.touched">A First Name is required</p>
+                </div>
+              
+                <div class="input-group mb-3 col-xs-12 col-md-12">
+                  <input #lastnameInput="ngModel" type="text" class="form-control prjct-soft-corners" [ngClass]="{'prjct-input-danger':(lastnameInput.invalid && lastnameInput.touched)}"
+                    ngModel name="lastname" placeholder="Last Name*" required>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <p class="prjct-input-danger-help-text" *ngIf="lastnameInput.invalid && lastnameInput.touched">A Last Name is required</p>
+                </div>
+              </div>
+              <button type="submit" form-group  class="btn btn-block btn-success prjct-btn prjct-soft-corners">Create New Teller</button>              
+              <div  class="col-md-12 card-body">
+                <h5 class="prjct-loading login-feedback text-center"><i class="fa fa-spin fa-circle-o-notch"></i></h5>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

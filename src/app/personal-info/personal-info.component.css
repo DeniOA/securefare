@@ -1,0 +1,74 @@
+.profile-form {
+  min-width: 3rem;
+  max-width: 10rem;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.increase-font {
+  font-size: 1.5rem !important;
+}
+
+/*========== Top Title ==========*/
+/*========== Top Title ==========*/
+.top-title {
+	min-height: 250px;
+	position: relative;
+	z-index: 6;
+	background-size: cover;
+	/* background-image: url('../images/top-title/top_title_01.jpg'); */
+}
+
+.top-title.car-top-title {
+	background-image: url('../home/assets/layer.jpg');
+}
+
+.top-title:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(1, 243, 14, 0.4);
+	z-index: -1;
+}
+
+.top-title .top-page {
+	position: absolute;
+	width: 100%;
+	top: 45%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	   -moz-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	     -o-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+
+.top-title .top-page .top-page-heading {
+	text-align: center;
+}
+
+.top-title .top-page .top-page-heading h3 {
+	color: #fff;
+}
+
+.top-title .top-page .breadcrumbs {
+	position: absolute;
+	top: 0;
+	color: #fff;
+}
+
+.top-title .top-page .breadcrumbs span {
+	display: inline-block;
+	font-size: 16px;
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	line-height: 36px;
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	margin-right: 10px;
+}

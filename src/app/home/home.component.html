@@ -1,0 +1,226 @@
+<app-header></app-header>
+
+<section id="showcase">
+  <div class="overlay">
+  <div class="container">
+      <div class="showcase-text">
+          <h1 class="greenh1"><strong>BOOK A TRIP WITH US TODAY</strong></h1>
+          <p>We save your time both while purchasing, the check-in and during the travel.</p>
+      </div>
+      <div class="showcase-form">
+
+          <div class="row">
+              <div class="booking-form">
+                  <form (ngSubmit)="onSearch()">
+                      <div class="form-group">
+                          <div class="form-checkbox">
+                              <label for="roundtrip">
+                                  <input type="radio" [(ngModel)]="chosen_choice" name="chosen_choice" value="1" id="roundtrip">
+                                  <span></span>Roundtrip
+                              </label>
+                              <label for="one-way">
+                                  <input type="radio" [(ngModel)]="chosen_choice" name="chosen_choice" value="2" id="one-way">
+                                  <span></span>One way
+                              </label>
+                              <label for="multi-city">
+                                  <input type="radio" [(ngModel)]="chosen_choice" name="chosen_choice" value="3" id="multi-city" >
+                                  <span></span>Multi-City
+                              </label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <span class="form-label">Flying from</span>
+                                  <!-- <input class="form-control" id="source" type="text"
+                                  placeholder="City or airport"> -->
+                                  <select [(ngModel)]="source" name="source" class="custom-select form-control" type="text" id="source" placeholder="City or airport">
+                                    <option>--Confirm your Location--</option>
+                                    <option *ngFor="let station of stations" [value] = "station.id">{{ station.name }}</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <span class="form-label">Flying to</span>
+                                  <!-- <input class="form-control" type="text" id="destination"
+                                  placeholder="City or airport"> -->
+                                  <select [(ngModel)]="destination" name="destination" class="custom-select form-control" type="text" id="destination" placeholder="City or airport">
+                                      <option>--Confirm your Destination--</option>
+                                    <option *ngFor="let station of stations" [value] = "station.id">{{ station.name }}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                <span class="form-label">Departing</span>
+                                  <mat-form-field color="#127A24">
+                                      <input matInput [matDatepicker]="picker1"
+                                      [(ngModel)]="check_date" name="check_date"
+                                      id="check_date" required>
+                                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                      <mat-datepicker #picker1></mat-datepicker>
+                                    </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <span class="form-label">Returning</span>
+                                  <mat-form-field color="#127A24">
+                                      <input
+                                      matInput [matDatepicker]="picker2"
+                                      [(ngModel)]="return_date" name="return_date"
+                                      id="return_date" required>
+                                      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                      <mat-datepicker #picker2></mat-datepicker>
+                                    </mat-form-field>
+                                  <!-- <input
+                                  ngModel #return_date="ngModel" name="return_date"
+                                  class="form-control" type="date"
+                                  id="return_date" required> -->
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+
+                          <div class="col-md-12">
+                              <div class="form-btn">
+                                  <button class="submit-btn">Show flights</button>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</section>
+<div class="colouredbar">
+      <div id="columncolor" class="a"></div>
+      <div id="columncolor" class="b"></div>
+      <div id="columncolor" class="c"></div>
+      <div id="columncolor" class="d"></div>
+  </div>
+
+<section id="who">
+
+  <div class="who-text bg-gray p-2">
+      <h6 class="m-heading">NECESSARY<span class="text-green"> INFORMATION</span> </h6>
+      <ul class="list" style="list-style-type:square;">
+          <li>Passengers who travel on airplanes require a pre-flight medical certificate. In any case, they are not
+              allowed to fly</li>
+          <li> Guide to distinguish real ticket tickets fake after booking and payment has been completed</li>
+          <li>Lost tickets, how to handle</li>
+          <li> Carrying items may not carry carry-on luggage when boarding an aircraft</li>
+          <li> Airlines have airport shuttles and fees</li>
+          <li> Bus routes go from downtown Ho Chi Minh City to Tan Son Nhat Airport and vice versa</li>
+          <li> The bus routes go from central Hanoi to Noi Bai airport and vice versa</li>
+          <li> The items are not carry checked baggage when boarding the aircraft</li>
+          <li> Flight tickets for the elderly and disabled</li>
+          <li> Bring the plaited food to the plane</li>
+      </ul>
+  </div>
+  <div class="items">
+      <h2 class="m-heading-2">EASY <span class="text-green"> PAYMENT - SAFERY</span> </h2>
+      <div class="item">
+          <div>
+              <i class="fas fa-university fa-2x"></i>
+          </div>
+          <div class="item-text">
+              <h5>CASH AT THE OFFICE</h5>
+              <p>After successful order, please go through the ticket office Exactly to pay and receive tickets.
+                  Alteration in some form, by injected humour, words which don't look.</p>
+          </div>
+      </div>
+      <div class="item">
+          <div>
+              <i class="fas fa-book-reader fa-2x"></i>
+          </div>
+          <div>
+              <h5>ONLINE PAYMENT (CAN)</h5>
+              <p>You can pay immediately (online). Payment at the box office, payment at your address, Payment by bank
+                  transfer.</p>
+          </div>
+      </div>
+      <div class="item">
+          <div>
+              <i class="fas fa-pencil-alt fa-2x"></i>
+          </div>
+          <div>
+              <h5>PAYMENT BY TRANSFER</h5>
+              <p>You can pay by direct transfer at bank, transfer via ATM card, or via Internet banking. Consectetur
+                  adipisicing elit, sed do eiusmod tempor incididunt labore.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="e-ticket" class="bg-light2 py-1">
+      <div class="layer">
+      </div>
+  <div class="container">
+      <h2 style="color: white; font-family: 'serif'; margin-top: 2rem; padding-left: 4.2rem;">E-TICKETS ADVANTAGES</h2>
+      <div class="items">
+          <div class="item">
+                  <i class="fas fa-laptop-code fa-2x"></i>
+                  <hr style="width: 40%;">
+              <div>
+
+                  <p>It's very easy to order a train ticket online. E-ticket cannot be lost or forgotten at home</p>
+              </div>
+          </div>
+          <div class="item">
+                  <i class="fas fa-times fa-2x"></i>
+                  <hr style="width: 40%;">
+              <div>
+
+                  <p>There's no need to go to the ticket office additionally before your trip. Save your money and nerves.</p>
+              </div>
+          </div>
+          <div class="item">
+                  <i class="fas fa-globe fa-2x"></i>
+                  <hr style="width: 40%;">
+              <div>
+
+                  <p>To order tickets, all you need is internet, a couple of minutes, and a payment card. Grab bonuses and discounts.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- </div> -->
+</section>
+
+<!-- <div class="container">
+      <section class="customer-logos slider">
+        <div class="slide"><img src="images/logo1.png"></div>
+        <div class="slide"><img src="images/logo2.png"></div>
+        <div class="slide"><img src="images/logo3.png"></div>
+        <div class="slide"><img src="images/logo5.png"></div>
+        <div class="slide"><img src="images/logo4.png"></div>
+        <div class="slide"><img src="images/logo2.png"></div>
+        <div class="slide"><img src="images/logo5.png"></div>
+      </section>
+    </div> -->
+
+    <section id="clients" class="py-1">
+          <div class="container">
+
+            <div class="items py-1 customer-logos">
+              <div class="slide"><img src="../../assets/images/logo1.png" alt="Client"></div>
+              <div class="slide"><img src="../../assets/images/logo2.png" alt="Client"></div>
+              <div class="slide"><img src="../../assets/images/logo3.png" alt="Client"></div>
+              <div class="slide"><img src="../../assets/images/logo4.png" alt="Client"></div>
+              <div class="slide"><img src="../../assets/images/logo5.png" alt="Client"></div>
+              <div class="slide"><img src="https://www.solodev.com/assets/carousel/image1.png"></div>
+              <div class="slide"><img src="https://www.solodev.com/assets/carousel/image2.png"></div>
+              <div class="slide"><img src="https://www.solodev.com/assets/carousel/image3.png"></div>
+
+            </div>
+          </div>
+        </section>
+
+
+<app-footer></app-footer>

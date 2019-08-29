@@ -1,0 +1,41 @@
+<div class="form-body">
+  <div class="website-logo">
+      <a href="index.html">
+          <div class="logo">
+              <img class="logo-size" src="images/logo-light.svg" alt="">
+          </div>
+      </a>
+  </div>
+  <div class="row">
+      <div class="img-holder">
+          <div class="bg"></div>
+          <div class="info-holder">
+
+          </div>
+      </div>
+      <div class="form-holder">
+          <div class="form-content">
+              <div class="form-items">
+                  <!-- <h3>Get more things done with Loggin platform.</h3>
+                  <p>Access to the most powerfull tool in the entire design and web industry.</p> -->
+                  <div class="page-links">
+                    <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+                  </div>
+                  <form [formGroup]="registrationForm" (ngSubmit)="register()">
+                      <input formControlName="first_name" class="form-control" type="text" name="firstname" placeholder="First Name" required>
+                      <input formControlName="last_name" class="form-control" type="text" name="lastname" placeholder="Last Name" required>
+                      <input formControlName="username" class="form-control" type="text" name="username" placeholder="Username" required>
+                      <input formControlName="email" class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                      <input formControlName="password" class="form-control" type="password" name="password" placeholder="Password" required>
+                      <div class="form-button">
+                          <button id="submit" type="submit" class="ibtn">Register</button>
+                      </div>
+                  </form>
+                  <div class="other-links">
+                      <span>Or register with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+<app-header2></app-header2>
+
+<section class="top-title car-top-title">
+</section>
+
+<div class="container">
+  <div class="row">
+      <div class="uk-placeholder col-md-3 mx-2">
+          <div>
+            <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              <h3 class="uk-card-title">Summary</h3>
+            </div>
+            <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              <div class="row">
+                <div class="col-6">
+                  <p>{{ ticket.train_name }}
+                  <span>{{ ticket.ages }}</span>
+                  </p>
+                </div>
+                <div class="col-6">
+                    <p>{{ ticket.class_type }}
+                    <span>{{ ticket.amount }}</span>
+                    </p>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-6">{{ ticket.departure }}</div>
+                <div class="col-6">{{ ticket.arrival }}</div>
+              </div>
+              <div class="row">
+                <div class="col-6">{{ ticket.source_terminal }}</div>
+                <div class="col-6">{{ ticket.destination_terminal }}</div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <p>Adult
+                  </p>
+                </div>
+                <div class="col-6">
+                    <p>{{ adults.length }}
+                    </p>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <p>Children
+                  </p>
+                </div>
+                <div class="col-6">
+                    <p>{{ children.length }}
+                    </p>
+                  </div>
+              </div>
+              <hr>
+            </div>
+            <!-- <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              Fro
+            </div>
+            <div class="uk-card uk-card-secondary uk-card-small uk-card-body">
+              Baggage
+            </div> -->
+            <div class="uk-card-footer uk-background-secondary uk-text-success">
+              <p class="uk-text-success">Total <span class="uk-align-right">{{ total }}</span> </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="uk-placeholder col-md-8 mx-2">
+
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title>Your Personal Information</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form class="reservationForm" [formGroup]="profileForm">
+                        <div class="uk-margin d-inline-block mx-2">
+                        <input formControlName="firstname" class="uk-input uk-form-width-medium" type="text" placeholder="First Name">
+                        </div>
+                        <div class="uk-margin d-inline-block mx-2">
+                        <input formControlName="lastname" class="uk-input uk-form-width-medium" type="text" placeholder="Last Name">
+                        </div>
+                        <div class="uk-margin d-inline-block mx-2">
+                        <input formControlName="phone_number" class="uk-input uk-form-width-medium" type="tel" placeholder="Primary Contact">
+                        </div>
+                        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                            <label><input class="uk-radio" type="radio" name="gender"> Male </label>
+                            <label><input class="uk-radio" type="radio" name="gender" checked> Female </label>
+                        </div>
+                        <div class="uk-margin mx-2">
+                        <input formControlName="next_of_kin_name" class="uk-input uk-form-width-large" type="email" placeholder="Next of Kin Fullname">
+                        </div>
+                        <div class="uk-margin d-inline-block mx-2">
+                          <input formControlName="next_of_kin_phone" class="uk-input uk-form-width-medium" type="tel" placeholder="Next of Kin Contact">
+                        </div>
+                        <button
+                        angular4-paystack
+                        [channels]="['card', 'bank']"
+                        [key]="'pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e'" [email]="'desinaoluseun@gmail.com'"
+                        [amount]="total * 100" [ref]="tRef" (close)="paymentCancel()"
+                        (callback)="onBook(profileForm, $event)"
+                        class="btn-block mt-4 increase-font uk-button uk-button-primary uk-button-large">
+                        Buy Tickets
+                      </button>
+                      </form>
+                </mat-card-content>
+              </mat-card>
+
+
+
+          <!-- <button
+          class="mt-4 increase-font uk-button uk-button-primary uk-button-large"
+          angular4-paystack
+          [channels]="['card', 'bank']"
+          [key]="'pk_test_c613fc7d428a64fd1e5daea22f8380551b28c78e'" [email]="'desinaoluseun@gmail.com'"
+          [amount]="'5000000'" [ref]="tRef" (close)="paymentCancel()" (callback)="paymentDone($event)"
+          [class]="'btn btn-primary btn-lg'"
+          >Buy Tickets</button> -->
+          </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
